@@ -12,7 +12,7 @@ jobs:
       - name: Imprime data atual
         run: date
   
-jobs:
+
   imprime_windows-latest:
     name: Imprime data atual - Windows-latest
     runs-on: Windows-latest
@@ -20,11 +20,19 @@ jobs:
     steps:
       - name: Imprime data atual
         run: date
-jobs:  
+
   imprime_macos-latest:
     name: Imprime data atual - Macos
     runs-on: macos-latest
-    needs: imprime_data_macos
+    
+    steps:
+      - name: Imprime data atual
+        run: date
+    
+  imprime_imprimedatafinal:
+    name: Imprime data final - dfinal
+    runs-on: ubuntu-latest
+    needs: [imprime_ubuntu-latest, imprime_windows-latest, imprime_macos-latest] 
     
     steps:
       - name: Imprime data atual
