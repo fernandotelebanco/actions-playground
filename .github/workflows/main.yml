@@ -4,7 +4,7 @@ on: push
 jobs:
   checkout_code:
     name: status_workflow 
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     
     steps:
       - name: checkout repository
